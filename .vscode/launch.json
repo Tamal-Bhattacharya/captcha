@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch AppCap",
+            "request": "launch",
+            "mainClass": "com.bhattacharya.AppCap",
+            "projectName": "captcha"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-App<captcha>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bhattacharya.App",
+            "projectName": "captcha",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
