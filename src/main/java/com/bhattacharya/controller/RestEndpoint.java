@@ -23,8 +23,13 @@ public class RestEndpoint {
 
     @Autowired
     CaptchaGenerator captchaGenerator;
+
+    @GetMapping("/index")
+    public String index(Model model){
+        return "index";
+    }
     
-    @GetMapping("/")
+    @GetMapping("/login")
     public String loginPage(Model model, HttpSession session){
         model.addAttribute("message", message);
 		model.addAttribute("employee", new User());
@@ -35,12 +40,15 @@ public class RestEndpoint {
     }
 
     @PostMapping(value="/login")
-    public String postMethodName(@ModelAttribute User user, HttpServletRequest request) {
+    public String postMethodName(@ModelAttribute("user") User user, HttpServletRequest request) {
         if(user.getUserName().equals("admin") && user.getPassword().equals("admin") && user.getCaptcha().equals(request.getSession().getAttribute("captcha"))){
-            return "Logged In Successfully";
+            return "redirect:/verified";
         }
-        
         return "redirect:/";
     }
     
+    @GetMapping("/verified")
+	public String verified() {
+		return "verified";
+	}
 }

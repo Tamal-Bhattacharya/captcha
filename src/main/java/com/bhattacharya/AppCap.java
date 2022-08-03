@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Bean;
 
 import com.bhattacharya.captcha.CaptchaGenerator;
 
-@SpringBootApplication
-public class AppCap 
+@SpringBootApplication(scanBasePackages = "com.bhattacharya")
+public class AppCap
 {
     public static void main( String[] args )
     {

@@ -8,7 +8,7 @@ import javax.xml.bind.DatatypeConverter;
 
 import nl.captcha.Captcha;
 
-public class CaptchaUtils {
+public abstract class CaptchaUtils {
     
     public static String encodeBase64(Captcha captcha) {
 		try {
