@@ -1,4 +1,4 @@
-package com.bhattacharya.model.com.battacharya.controller.com.bhattacharya.captcha;
+package com.bhattacharya.captcha;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

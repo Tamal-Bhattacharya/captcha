@@ -1,4 +1,4 @@
-package com.bhattacharya.model.com.battacharya.controller;
+package com.bhattacharya.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bhattacharya.model.User;
-import com.bhattacharya.model.com.battacharya.controller.com.bhattacharya.captcha.CaptchaGenerator;
-import com.bhattacharya.model.com.battacharya.controller.com.bhattacharya.captcha.CaptchaUtils;
+import com.bhattacharya.captcha.CaptchaGenerator;
+import com.bhattacharya.captcha.CaptchaUtils;
 
 import nl.captcha.Captcha;
 
