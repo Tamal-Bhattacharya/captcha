@@ -36,9 +36,9 @@ public class LoginController {
 	}
 	
 	@PostMapping("/login")
-	public String save(@ModelAttribute("user") User employee, HttpServletRequest request) {
-		if(employee.getCaptcha().equals(request.getSession().getAttribute("captcha"))) {
-			if (employee.getName().equals("admin") && employee.getPassword().equals("admin")) {
+	public String save(@ModelAttribute("user") User user, HttpServletRequest request) {
+		if(user.getCaptcha().equals(request.getSession().getAttribute("captcha"))) {
+			if (user.getName().equals("admin") && user.getPassword().equals("admin")) {
 				return "redirect:/verified";
 			}
 			message = "Invalid Username/Password";
@@ -55,7 +55,11 @@ public class LoginController {
 	}
 
 	@GetMapping("/reset")
-	public String reset() {
+	public String reset(Model model, HttpSession httpSession) {
+		// Captcha captcha = captchaGenerator.createCaptcha(200, 50);
+		// httpSession.setAttribute("captcha", captcha.getAnswer());
+		// model.addAttribute("captchaEncode", CaptchaUtils.encodeBase64(captcha));
+		message = null;
 		return "redirect:/";
 	}
 }

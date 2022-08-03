@@ -2,6 +2,8 @@ package com.bhattacharya.captcha;
 
 import org.springframework.beans.factory.InitializingBean;
 
+import com.bhattacharya.renderer.AlignedWordRenderer;
+
 import nl.captcha.Captcha;
 import nl.captcha.backgrounds.BackgroundProducer;
 import nl.captcha.backgrounds.FlatColorBackgroundProducer;
@@ -50,6 +52,7 @@ public class CaptchaGenerator implements InitializingBean {
 		}
 		if(this.wordRenderer == null) {
 			this.wordRenderer = new DefaultWordRenderer();
+			// this.wordRenderer = new AlignedWordRenderer();
 			//this.wordRenderer = new ColoredEdgesWordRenderer();
 		}
 		if(this.noiseProducer == null) {
