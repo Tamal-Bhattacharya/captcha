@@ -1,6 +1,6 @@
 package com.bhattacharya.modal;
 
-public class Employee {
+public class User {
 	private String name;
 	private String password;
 	private String captcha;

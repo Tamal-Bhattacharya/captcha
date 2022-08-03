@@ -18,7 +18,7 @@
 						<strong><span class="glyphicon glyphicon-plus-sign"></span> User</strong>
 					</div>
 					<div class="panel-body">
-						<form:form method="POST" action="/save" class="form-signin form-horizontal" commandName="employee">
+						<form:form method="POST" action="/login" class="form-signin form-horizontal" commandName="user">
 							<c:if test="${message ne null}">
 								<div class="alert alert-danger">
 									${message}
@@ -56,11 +56,11 @@
 							</div>
 							<div class="form-group">
 								<div class="col-md-12" align="right">
-									<a href="/refresh" class="btn btn-default btn-xs">
-										<span class="glyphicon glyphicon-refresh"></span> Refresh Captcha
+									<a href="/reset" class="btn btn-default btn-xs">
+										<span class="glyphicon glyphicon-refresh"></span> Reset
 									</a>
 									<button type="submit" class="btn btn-default btn-xs">
-										<span class="glyphicon glyphicon-floppy-disk"></span> submit
+										<span class="glyphicon glyphicon-floppy-disk"></span> Submit
 									</button>
 								</div>
 							</div>

@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bhattacharya.captcha.CaptchaGenerator;
 import com.bhattacharya.captcha.CaptchaUtils;
-import com.bhattacharya.modal.Employee;
+import com.bhattacharya.modal.User;
 
 import nl.captcha.Captcha;
 
 @Controller
-public class EmployeeController {
+public class LoginController {
 	private String message;
 	@Autowired
 	private CaptchaGenerator captchaGenerator;
@@ -28,15 +28,15 @@ public class EmployeeController {
 	public String add(Model model, HttpSession httpSession) {
 		this.model = model;
 		model.addAttribute("message", message);
-		model.addAttribute("employee", new Employee());
+		model.addAttribute("user", new User());
 		Captcha captcha = captchaGenerator.createCaptcha(200, 50);
 		httpSession.setAttribute("captcha", captcha.getAnswer());
 		model.addAttribute("captchaEncode", CaptchaUtils.encodeBase64(captcha));
-		return "add";
+		return "login";
 	}
 	
-	@PostMapping("/save")
-	public String save(@ModelAttribute("employee") Employee employee, HttpServletRequest request) {
+	@PostMapping("/login")
+	public String save(@ModelAttribute("user") User employee, HttpServletRequest request) {
 		if(employee.getCaptcha().equals(request.getSession().getAttribute("captcha"))) {
 			if (employee.getName().equals("admin") && employee.getPassword().equals("admin")) {
 				return "redirect:/verified";
@@ -52,5 +52,10 @@ public class EmployeeController {
 	@GetMapping("/verified")
 	public String verified() {
 		return "verified";
+	}
+
+	@GetMapping("/reset")
+	public String reset() {
+		return "redirect:/";
 	}
 }
