@@ -28,8 +28,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/jcaptcha-1.0-all.jar"/>
-	<classpathentry kind="lib" path="lib/simplecaptcha-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/simplecaptcha-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/simplecaptcha-1.2-sources.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>

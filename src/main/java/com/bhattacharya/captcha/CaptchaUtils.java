@@ -9,8 +9,8 @@ import javax.xml.bind.DatatypeConverter;
 import nl.captcha.Captcha;
 
 public abstract class CaptchaUtils {
-    
-    public static String encodeBase64(Captcha captcha) {
+
+	public static String encodeBase64(Captcha captcha) {
 		try {
 			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 			ImageIO.write(captcha.getImage(), "png", outputStream);
@@ -20,5 +20,4 @@ public abstract class CaptchaUtils {
 		}
 		return null;
 	}
-    
 }
